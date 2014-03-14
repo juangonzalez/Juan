@@ -7,11 +7,14 @@ body{
 }
 
 #sidebar{
-	background-color:#4CACFF;
+	background-color: #4CACFF;
+	width: 341px;
 	float: left;
 }
 
 main{
-	background-color:#0089FF;
+	background-color: #0089FF;
+	width: 682px;
+	height: 100px;
 	float: left;
 }
