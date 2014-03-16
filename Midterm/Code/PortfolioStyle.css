@@ -1,0 +1,294 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700);
+
+body{
+	background: #333;
+	overflow-x: hidden;
+	font-family: 'Open Sans', sans-serif, Arial, Helvetica, sans-serif;
+	color: #000;
+}
+
+.sidebar{
+  width: 230px;
+  height: 700px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #333;
+  overflow: hidden;
+  -webkit-box-shadow: 10px 0px 10px 0 rgba(0,0,0,.4);
+  box-shadow: 0px 0px 10px 0 rgba(0,0,0,.4);
+  z-index: 999;
+  text-align: center;
+}
+
+.logo_cont{
+  text-align: center;
+  padding: 35px 15px;
+}
+
+.logo_cont a{
+  color: #fff;
+  text-decoration: none;
+}
+
+.main_nav li{
+  border-top: 1px dashed #ccc;
+  position: relative;
+}
+
+.main_nav li:active a{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.main_nav li a{
+  padding: 15px;
+  display: block;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #000;
+  font-size: 16px;
+  z-index: 500;
+}
+
+.main_nav li.active span{
+
+}
+
+.main_nav li span{
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 48px;
+  width: 100%;
+}
+
+.about_btn span{
+  background: #006DCC;
+}
+
+.works_btn span{
+  background: #4CACFF;
+}
+
+.services_btn span{
+  background: #0089FF;
+}
+
+.main_nav li:last-child{
+  border-bottom: 1px dashed #ccc;
+}
+
+.sidefoot{
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.socialmedia, .socialmedia li{
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.socialmedia li a{
+  display: inline-block;
+  width: 34px;
+  height: 34px;
+}
+
+.fb a{
+  background: url(../images/facebook-icon.png) no-repeat center center;
+}
+
+.gp a{
+  background: url(../images/google-plus-icon.png) no-repeat center center;
+}
+
+.copyright{
+  font-size: 12px;
+  color: #999;
+  padding: 15px 0 0 0;
+}
+
+.content_wrap{
+  margin-left: 230px;
+}
+
+.about, .about_btn span{
+  background: #006DCC;
+}
+
+.about, .works, .services{
+  min-height:700px;
+	backface-visibility: visible;
+}
+
+.about.active, .works.active, .services.active{
+  
+}
+
+.intro{
+  padding: 180px 50px 50px 80px;
+  text-transform: uppercase;
+}
+
+.intro_desc{
+  padding: 0 50px 50px 80px;
+  max-width: 685px;
+  line-height: 24px;
+}
+
+.works, .works_btn span{
+  background: #4CACFF;
+}
+
+.title{
+  padding: 50px 50px 30px 80px;
+  text-transform: uppercase;
+}
+
+.works_list{
+  padding-bottom: 50px;
+  font-size: 0;
+}
+
+.works_list .item{
+  display: inline-block;
+  width: 25%;
+  min-width: 200px;
+}
+
+.works_list .item. img{
+  width: 100%;
+}
+
+.work_details{
+  width: 100%;
+  max-width: 100%;
+  background-color: rgba(0,0,0,0.8);
+  z-index: 1053!important;
+  position: absolute;
+  overflow: hidden;
+  left: 0px;
+  bottom: 0px;
+  height: 0px;
+}
+
+.work_details h4{
+  font-size: 16px;
+  padding: 20px 0 0 20px;
+  color: #fff;
+}
+
+.work_details p{
+  font-size: 14px;
+  padding: 15px 0 15px 20px;
+  color: #fff;
+}
+
+.work_details > div > a{
+  font-size: 14px;
+  text-decoration: none!important;
+  padding-left: 20px;
+  color: #fff;
+}
+
+.detail_foot > a{
+  display: inline-block;
+}
+
+.external_link{
+  width: 30px;
+  height: 30px;
+  background-image: url(../images/works/external_link.png);
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.preview_text{
+  vertical-align: middle;
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.clr{
+  clear: both;
+}
+
+.services, .services_btn span{
+  background: #0089FF;
+}
+
+.service_list{
+  padding: 0 20px 50px 80px;
+}
+
+.service_list li{
+  list-style: none;
+}
+
+.service_list h4{
+  font-size: 36px;
+  font-weight: 300px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.service_list li ul{
+  padding: 0 0 25px 0;
+}
+
+.service_list li li{
+  margin: 15px 5px;
+}
+
+.service_list h5{
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 0 10px 0;
+}
+
+.service_list p{
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+
+h3.big{
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+}
+
+h1{
+  font-weight: 700;
+  font-size: 48px;
+  color: #fff;
+}
+
+h2, h3{
+  font-weight: 400;
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
