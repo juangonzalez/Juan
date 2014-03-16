@@ -153,6 +153,32 @@ body{
   text-transform: uppercase;
 }
 
+.workshold{
+  width: 1000px;
+  height: 350px;
+}
+
+.carbocakes{
+  padding-left: 25px;
+  background: #fff;
+  height:325px;
+  width: 425px;
+
+}
+
+.carbocakes p{
+  padding-left: 115px;
+}
+
+.carbocakes a{
+  text-decoration: none;
+  padding-left: 115px;
+  color: #000;
+}
+
+
+
+/*
 .works_list{
   padding-bottom: 50px;
   font-size: 0;
@@ -164,7 +190,7 @@ body{
   min-width: 200px;
 }
 
-.works_list .item. img{
+.works_list .item img{
   width: 100%;
 }
 
@@ -220,7 +246,7 @@ body{
 .clr{
   clear: both;
 }
-
+*/
 .services, .services_btn span{
   background: #0089FF;
 }
