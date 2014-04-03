@@ -166,7 +166,8 @@ public class Character{
 					break;
 				case 'r': g.drawImage(right[0], x, y, null);
 					break;
-			}else switch(direction){
+			}
+		}else switch(direction){
 				case 'd': g.drawImage(down[currFrame], x, y, null);
 					break;
 				case 'l': g.drawImage(left[currFrame], x, y, null);

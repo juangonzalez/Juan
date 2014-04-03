@@ -143,7 +143,7 @@ public class Screen{
 		int x=0, y=0;
 		
 		for(int i=0; i<21; i++){
-			x=0
+			x=0;
 			
 			for(int j=0; j<30; j++){
 				switch(level){

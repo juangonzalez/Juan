@@ -136,61 +136,6 @@ public class GraphicsPanel extends JPanel{
 				hero.setY();
 			}
 		}
-		
-		if(screen.getLevel()==2){
-			if((hero.getTopY()>1020)){
-				screen.setLevel(1);
-				hero.setX();
-				hero.setY();
-			}
-		}
-		
-		if(screen.getLevel()==3){
-			if((hero.getTopX()>1450)){
-				screen.setLevel(1);
-				hero.setX();
-				hero.setY();
-			}
-		}
-		
-		if(screen.getLevel()==4){
-			if((hero.getTopY()<0)){
-				screen.setLevel(1);
-				hero.setX();
-				hero.setY();
-			}else if((hero.getTopY()>1070)){
-				screen.setLevel(6);
-				hero.setY();
-			}
-		}
-		
-		if(screen.getLevel()==5){
-			if((hero.getTopX()<0)){
-				screen.setLevel(1);
-				hero.setX();
-				hero.setY();
-			}
-		}
-		
-		if(screen.getLevel()==6){
-			if((hero.getTopY()<0)){
-				screen.setLevel(4);
-				hero.setX();
-				hero.setY();
-			}else if((hero.getTopY()== && hero.getTopX()==)){
-				screen.setLevel(6);
-				hero.setX();
-				hero.setY();
-			}		
-		}
-		
-		if(screen.getLevel()==7){
-			if((hero.getTopY()== && hero.getTopX()==)){
-				screen.setLevel(6);
-				hero.setX();
-				hero.setY();
-			}
-		}
 	}
 	
 	public void paint(Graphics g){

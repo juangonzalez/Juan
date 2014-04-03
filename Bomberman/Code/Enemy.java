@@ -7,7 +7,7 @@ import java.io.*;
 import java.util.*;
 
 public class Enemy{
-	private int x, y, hp currFrame, maxFrame, tick, damage, speed;
+	private int x, y, hp, currFrame, maxFrame, tick, damage, speed;
 	private final int maxtick=11;
 	private char direction;
 	private boolean Moving, superRandom;
