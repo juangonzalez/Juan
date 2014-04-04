@@ -8,6 +8,8 @@ public class GamePanel extends JPanel{
 	
 	public void moveDir(char c, int player){
 		Character temp;
+		int tx=h.getX();
+		int ty=h.getY();
 		
 		if(player==1){
 			temp=h;
@@ -23,13 +25,15 @@ public class GamePanel extends JPanel{
 				if(c=='d')temp.setY(temp.getY()-5);
 				if(c=='l')temp.setX(temp.getX()+5);
 				if(c=='r')temp.setX(temp.getX()-5);
-		}		
+		}
 	}
 	
 	public GamePanel(){
+		l=new Level();
+		l.setLevel(1);
 		h=new Character(290,75);
-		h2=new Character(290,725);
-		l=new Level(1);
+		h2=new Character(490,75);
+		
 		
 	}
 	
@@ -47,7 +51,6 @@ public class GamePanel extends JPanel{
 	public void paintComponent(Graphics g){
 		g.setColor(Color.BLUE);
 		g.fillRect(0, 0, 640, 640);
-		g.setColor(Color.BLACK);
 		l.draw(g);
 		h.draw(g);
 		h2.draw(g);
