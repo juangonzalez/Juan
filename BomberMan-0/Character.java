@@ -1,10 +1,19 @@
+import java.io.*;
+import javax.imageio.*;
 import java.awt.*;
+import java.awt.image.*;
+import java.awt.event.*;
+import java.awt.event.KeyEvent;
+import javax.swing.*;
+import javax.swing.JFrame;
+
 
 public class Character{
 	private int x, y, tick, currFrame, maxFrame;
 	private char direction;
 	private boolean box, isMoving;
 	private BufferedImage up[], down[], left[], right[];
+	private final int maxtick=1;
 	
 	public int getX(){return x;}
 	public void setX(int i){x=i;}
@@ -85,8 +94,25 @@ public class Character{
 	
 	public void draw(Graphics g){
 		if(!isMoving){
-			case 'u': g.drawImage(up[0], x, y, null);
-				break;
+      switch(direction){
+        case 'u': g.drawImage(up[0], x, y, null);
+          break;
+        case 'd': g.drawImage(down[0], x, y, null);
+          break;
+        case 'l': g.drawImage(left[0], x, y, null);
+          break;
+        case 'r': g.drawImage(right[0], x, y, null);
+          break;
+      }
+		}else switch(direction){
+      case 'u': g.drawImage(up[currFrame], x, y, null);
+        break;
+      case 'd': g.drawImage(down[currFrame], x, y, null);
+        break;
+      case 'l': g.drawImage(left[currFrame], x, y, null);
+        break;
+      case 'r': g.drawImage(right[currFrame], x, y, null);
+        break;
 		}
 	}
 	

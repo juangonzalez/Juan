@@ -8,6 +8,7 @@ public class Game implements KeyListener,ActionListener{
 	private JFrame window;
 	private GamePanel gp;
 	private Timer timer;
+	private Character cc;
 	
 	public Game(){
 		window=new JFrame("BomberMan-0");
@@ -23,6 +24,7 @@ public class Game implements KeyListener,ActionListener{
 	}
 	
 	public void actionPerformed(ActionEvent e){
+		cc.update();
 		gp.repaint();
 	
 	}
@@ -41,10 +43,10 @@ public class Game implements KeyListener,ActionListener{
 		}else if(e.getKeyCode()==83){
 			//S
 			gp.moveDir('d',1);
-		}else if(e.getKeyCode()==68){
+		}else if(e.getKeyCode()==65){
 			//A
 			gp.moveDir('l',1);
-		}else if(e.getKeyCode()==65){
+		}else if(e.getKeyCode()==68){
 			//D
 			gp.moveDir('r',1);
 		}else if(e.getKeyCode()==38){
