@@ -14,28 +14,28 @@ public class Character{
 	private boolean box, isMoving;
 	private BufferedImage up[], down[], left[], right[];
 	private final int maxtick=1;
-	
+
 	public int getX(){return x;}
 	public void setX(int i){x=i;}
 	public int getY(){return y;}
 	public void setY(int i){y=i;}
-	
+
 	public void moveUp(){
 		y=y-5;
 	}
-	
+
 	public void moveDown(){
 		y=y+5;
 	}
-	
+
 	public void moveLeft(){
 		x=x-5;
 	}
-	
+
 	public void moveRight(){
 		x=x+5;
 	}
-	
+
 	public void move(char dir){
 		direction=dir;
 		isMoving=true;
@@ -49,7 +49,7 @@ public class Character{
 			x+=5;
 		}		
 	}
-	
+
 	public Character(int _x, int _y){
 		x=_x;
 		y=_y;
@@ -61,7 +61,7 @@ public class Character{
 		down=new BufferedImage[2];
 		left=new BufferedImage[2];
 		right=new BufferedImage[2];
-		
+
 		try{
 			for(int i=0; i<2; i++){
 				up[i]=ImageIO.read(new File("character/BombermanUp_0"+(i+1)+".png"));
@@ -79,7 +79,7 @@ public class Character{
 			e.printStackTrace();
 		}			
 	}
-	
+
 	public void update(){
 		tick++;
 		if(tick>maxtick){
@@ -89,19 +89,27 @@ public class Character{
 				currFrame=0;
 			}
 		}
-	
+
 	}
-	
+
 	public void draw(Graphics g){
 		if(!isMoving){
       switch(direction){
         case 'u': g.drawImage(up[0], x, y, null);
+                  g.drawRect(x,y, up[0].getWidth(), up[0].getHeight());
+ 
           break;
         case 'd': g.drawImage(down[0], x, y, null);
+                  g.drawRect(x,y, down[0].getWidth(), down[0].getHeight());
+
           break;
         case 'l': g.drawImage(left[0], x, y, null);
+                 g.drawRect(x,y, left[0].getWidth(), left[0].getHeight());
+
           break;
         case 'r': g.drawImage(right[0], x, y, null);
+                  g.drawRect(x,y, right[0].getWidth(), right[0].getHeight());
+
           break;
       }
 		}else switch(direction){
@@ -115,13 +123,18 @@ public class Character{
         break;
 		}
 	}
-	
+
 	private int top_x, top_y, width, height;
+
+	public int getTopX(){
+if(direction=='u' || direction=='d')return x-10; return x-15;
+	}
+	public int getTopY(){
 	
-	public int getTopX(){if(direction=='u' || direction=='d')return x-10; return x-15;}
-	public int getTopY(){if(direction=='u' || direction=='d')return y-15; return y-10;}
+	if(direction=='u' || direction=='d')return y-15; return y-10;
+	}
 	public int getWidth(){if(direction=='u' || direction=='d')return 25; return 30;}
 	public int getHeight(){if(direction=='u' || direction=='d')return 30; return 25;}
-	
-	
+
+
 }

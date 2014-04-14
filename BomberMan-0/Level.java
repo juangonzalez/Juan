@@ -126,6 +126,8 @@ public class Level{
 			for(int j=0; j<20; j++){
 				switch(level){
 					case 1: g.drawImage(img[map[i][j]], x, y, null);
+					        g.setColor(Color.RED);
+					        g.drawRect(x, y,img[map[i][j]].getWidth(),img[map[i][j]].getHeight());
 						break;
 				}
 				x=x+SPRITE_WIDTH;			
