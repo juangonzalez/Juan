@@ -13,7 +13,7 @@ public class Game implements KeyListener,ActionListener{
 		window=new JFrame("BomberMan-0");
 		gp=new GamePanel();
 		window.add(gp);
-		window.setSize(640,640);
+		window.setSize(640,662);
 		timer=new Timer(100,this);
 		timer.start();
 		window.setVisible(true);

@@ -14,6 +14,8 @@ public class Character{
 	private boolean box, isMoving;
 	private BufferedImage up[], down[], left[], right[];
 	private final int maxtick=1;
+	private final int CHA_W=25;
+	private final int CHA_H=30;
 
 	public int getX(){return x;}
 	public void setX(int i){x=i;}
@@ -119,7 +121,7 @@ public class Character{
         break;
       case 'l': g.drawImage(left[currFrame], x, y, null);
         break;
-      case 'r': g.drawImage(right[currFrame], x, y, null);
+      case 'r': g.drawImage(right[currFrame], x, y, null); 
         break;
 		}
 	}
@@ -127,14 +129,17 @@ public class Character{
 	private int top_x, top_y, width, height;
 
 	public int getTopX(){
-if(direction=='u' || direction=='d')return x-10; return x-15;
+		return x;
 	}
 	public int getTopY(){
-	
-	if(direction=='u' || direction=='d')return y-15; return y-10;
+		return y;
 	}
-	public int getWidth(){if(direction=='u' || direction=='d')return 25; return 30;}
-	public int getHeight(){if(direction=='u' || direction=='d')return 30; return 25;}
+	public int getWidth(){
+		return CHA_W;
+	}
+	public int getHeight(){
+		return CHA_H;
+	}
 
 
 }
