@@ -17,7 +17,7 @@ public class GamePanel2 extends JPanel{
     s=new Screen2();
     s.setLevel(1);
     hero=new Character2(32, 32);
-    h2=new Character2(132, 32);
+    h2=new Character2(576, 576);
     bombs=new ArrayList<Bomb>(); 
     ticks=0;
   }
@@ -30,50 +30,50 @@ public class GamePanel2 extends JPanel{
     int h2y=h2.getY();    
     
     if(c=='u' && i==1){
-      ty=-5;
+      ty=-4;
       if(s.level_collision(tx, ty, hero.getWidth(), hero.getHeight())){
         hero.move(c);
       }
     }
     if(c=='d' && i==1){
-      ty+=5;
+      ty+=4;
       if(!s.level_collision(tx, ty, hero.getWidth(), hero.getHeight())){
         hero.move(c);
       }
     }
     if(c=='l' && i==1){
-      tx-=5;
+      tx-=4;
       if(!s.level_collision(tx, ty, hero.getWidth(), hero.getHeight())){
         hero.move(c);
       }
     }
     if(c=='r' && i==1){
-      tx+=5;
+      tx+=4;
       if(!s.level_collision(tx, ty, hero.getWidth(), hero.getHeight())){
         hero.move(c);
       }
     }
     
     if(c=='u' && i==2){
-    	h2y=-5;
+    	h2y=-4;
     	if(s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
     		h2.move(c);
     	}
     }
     if(c=='d' && i==2){
-    	h2y+=5;
+    	h2y+=4;
     	if(!s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
     		h2.move(c);
     	}
     }
     if(c=='l' && i==2){
-    	h2x-=5;
+    	h2x-=4;
     	if(!s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
     		h2.move(c);
     	}
     }
     if(c=='r' && i==2){
-    	h2x+=5;
+    	h2x+=4;
     	if(!s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
     		h2.move(c);
     	}
@@ -109,29 +109,33 @@ public class GamePanel2 extends JPanel{
   	
   }
   
-  
-  
-  
-  
-  
-  
-  
+  public void reset(){
+  	s.setLevel(1);
+  	hero.setX(32);
+  	hero.setY(32);
+  	h2.setX(576);
+  	h2.setY(576);
+  }
   
   public void update(){
   	ticks++;
 	int bx, by, bw, bh;
-  	if(ticks%100==0)
+  	
+  	if(ticks%200==0){
   		if(bombs.size()>0){
-  		bx = bombs.get(0).getX()-32;
-  		by = bombs.get(0).getY()-32;
-  		bw=32+64;
-  		bh=32+64;			
-  		if(s.bounding_box_collision(hero.getX(), hero.getY(), hero.getWidth(), hero.getHeight(), bx, by, bw, bh)){
-  			
-  		System.out.println("hello");}
-  		
-  		bombs.remove(0);
+  			bx = bombs.get(0).getX()-32;
+  			by = bombs.get(0).getY()-32;
+  			bw=32+64;
+  			bh=32+64;			
+  			if(s.bounding_box_collision(hero.getX(), hero.getY(), hero.getWidth(), hero.getHeight(), bx, by, bw, bh) || 
+  				s.bounding_box_collision(h2.getX(), h2.getY(), h2.getWidth(), h2.getHeight(), bx, by, bw, bh)){
+  				System.out.println("hello");
+  				this.reset();
+  			}
+  			bombs.remove(0);
     	}
+    }	
+    
     int tx=hero.getX();
     int ty=hero.getY();
     
@@ -139,50 +143,50 @@ public class GamePanel2 extends JPanel{
     int h2y=h2.getY(); 
     
     if(hero.getDirection()=='u'){
-		ty-=5;
+		ty-=4;
 		if(s.level_collision(tx,ty,hero.getWidth(),hero.getHeight())){
         	hero.stop();
 		}
 	}
     if(hero.getDirection()=='d'){
-		ty+=5;
+		ty+=4;
 		if(s.level_collision(tx,ty,hero.getWidth(),hero.getHeight())){
         	hero.stop();
 		}
     }
     if(hero.getDirection()=='l'){
-    	tx-=5;
+    	tx-=4;
       	if(s.level_collision(tx,ty,hero.getWidth(),hero.getHeight())){
         	hero.stop();
       	}
 	}
     if(hero.getDirection()=='r'){
-		tx+=5;
+		tx+=4;
 		if(s.level_collision(tx,ty,hero.getWidth(),hero.getHeight())){
         	hero.stop();
 		}
 	}
 	
 	if(h2.getDirection()=='u'){
-		h2y-=5;
+		h2y-=4;
 		if(s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
 			h2.stop();
 		}
 	}	
 	if(h2.getDirection()=='d'){
-		h2y+=5;
+		h2y+=4;
 		if(s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
 			h2.stop();
 		}
 	}	
 	if(h2.getDirection()=='l'){
-		h2x-=5;
+		h2x-=4;
 		if(s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
 			h2.stop();
 		}
 	}	
 	if(h2.getDirection()=='r'){
-		h2x+=5;
+		h2x+=4;
 		if(s.level_collision(h2x, h2y, h2.getWidth(), h2.getHeight())){
 			h2.stop();
 		}

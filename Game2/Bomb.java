@@ -15,10 +15,12 @@ public class Bomb{
 	public Bomb(int _x, int _y){
 		x=_x;
 		y=_y;
-		bomb=new BufferedImage[1];
+		bomb=new BufferedImage[3];
 		
 		try{
-				bomb[0]=ImageIO.read(new File("Tiles/BombExplode_01.png"));
+			for(int i=0; i<3; i++){
+				bomb[i]=ImageIO.read(new File("Tiles/BombExplode_0"+(i+1)+".png"));
+			}
 		}catch(IOException e){
 			e.printStackTrace();
 		}
@@ -31,7 +33,7 @@ public class Bomb{
 
 	
 	public void draw(Graphics g){
-		g.drawImage(bomb[0], x, y, null);
+		g.drawImage(bomb[2], x, y, null);
 	}
   
 }

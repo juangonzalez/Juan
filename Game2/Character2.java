@@ -24,7 +24,7 @@ public class Character2{
   private final int CHAR_W=25;
   private final int CHAR_H=29;
   private final int viewRange=100;
-  private final int SPEED=5;
+  private final int SPEED=4;
   
   public Character2(int _x, int _y){
     x=_x;
@@ -63,19 +63,19 @@ public class Character2{
   public char getDirection(){return direction;}
   
   public void moveUp(){
-    y-=5;
+    y-=4;
   }
   
   public void moveDown(){
-    y+=5;
+    y+=4;
   }
   
   public void moveLeft(){
-    x-=5;
+    x-=4;
   }
   
   public void moveRight(){
-    x+=5;
+    x+=4;
   }
   
   public void stop(){
