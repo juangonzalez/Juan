@@ -31,26 +31,44 @@ public class Game2 implements KeyListener, ActionListener{
     key++;
     if(e.getKeyCode()==87){
       //W-Up
-      gp.moveDir('u');
+      gp.moveDir('u',1);
     }
     else if(e.getKeyCode()==83){
       //S-Down
-      gp.moveDir('d');
+      gp.moveDir('d',1);
     }
       else if(e.getKeyCode()==65){
       //A-Left
-      gp.moveDir('l');
+      gp.moveDir('l',1);
     }
     else if(e.getKeyCode()==68){
       //D-Right
-      gp.moveDir('r');
-    }
+      gp.moveDir('r',1);
+    }else if(e.getKeyCode()==38){
+    	//UpA
+		gp.moveDir('u',2);
+	}else if(e.getKeyCode()==40){
+		//DownA
+		gp.moveDir('d',2);
+	}else if(e.getKeyCode()==39){
+		//RightA
+		gp.moveDir('r',2);
+	}else if(e.getKeyCode()==37){
+		//LeftA
+		gp.moveDir('l',2);
+	}else if(e.getKeyCode()==32){
+		gp.doBomb(1);		
+	}else if(e.getKeyCode()==96){
+		gp.doBomb(2);
+	}
+    
   }
   
   @Override
   public void keyReleased(KeyEvent e){
     key--;
-    gp.moveDir('x');
+    gp.moveDir('x', 1);
+    gp.moveDir('v', 2);
   }
   
   public void actionPerformed(ActionEvent e){

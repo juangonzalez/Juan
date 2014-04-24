@@ -22,7 +22,7 @@ public class Character2{
   private boolean isMoving;
   private final int maxTick=1;
   private final int CHAR_W=25;
-  private final int CHAR_H=30;
+  private final int CHAR_H=29;
   private final int viewRange=100;
   private final int SPEED=5;
   
