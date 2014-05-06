@@ -15,7 +15,7 @@ public class Game2 implements KeyListener, ActionListener{
   private int key;
   
   public Game2(){
-    win=new JFrame("Game2");
+    win=new JFrame("BomberJuan");
     gp=new GamePanel2();
     win.add(gp);
     win.setSize(640,662);
